@@ -121,6 +121,7 @@
 #define bench_mode_e_HD_ACR2 29
 #define BENCH_STARTER_DURATION 4000
 #define BENCH_VVT_DURATION 300
+#define BLEND_TABLE_COUNT 8
 #define blend_table_s_size 188
 #define BLOCKING_FACTOR 1024
 #define BOARD_CONFIG_FROM_FILE 
@@ -204,6 +205,7 @@
 #define CanGpioType_NONE 0
 #define CLT_CRANKING_CURVE_SIZE 8
 #define CLT_CURVE_SIZE 16
+#define CLT_FUEL_CURVE_SIZE 16
 #define CLT_LIMITER_CURVE_SIZE 4
 #define CLT_TIMING_CURVE_SIZE 8
 #define CLT_UPPER_LIMIT 250
@@ -1080,6 +1082,7 @@
 #define HPFP_TARGET_SIZE 10
 #define IAC_PID_MULT_SIZE 8
 #define IAT_CURVE_SIZE 16
+#define IAT_IGN_CORR_COUNT 8
 #define IDLE_ADVANCE_CURVE_SIZE 8
 #define idle_hardware_s_size 12
 #define idle_mode_e_auto_enum 0="IM_AUTO",1="IM_MANUAL"
@@ -1332,7 +1335,7 @@
 #define SentInput_NONE 0
 #define show_tcu_gauges false
 #define show_vvt_output_pin true
-#define SIGNATURE_HASH 1104432629
+#define SIGNATURE_HASH 3392622780
 #define SIMULATOR_TUNE_BIN_FILE_NAME "generated/simulator_tune_image.bin"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_PREFIX "generated/simulator_tune_image"
 #define SIMULATOR_TUNE_BIN_FILE_NAME_SUFFIX ".bin"
@@ -1794,7 +1797,7 @@
 #define ts_show_wastegate_sensor true
 #define ts_show_wbo_canbus_index true
 #define ts_show_wbo_canbus_set_index true
-#define TS_SIGNATURE "rusEFI main.2024.12.14.hellen-f4-community.1104432629"
+#define TS_SIGNATURE "rusEFI main.2024.12.15.hellen-f4-community.3392622780"
 #define TS_SIMULATE_CAN '>'
 #define TS_SIMULATE_CAN_char >
 #define TS_SINGLE_WRITE_COMMAND 'W'
