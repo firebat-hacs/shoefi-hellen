@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <msq xmlns="http://www.msefi.com/:msq">
     <page/>
-    <page number="0" size="23716">
+    <page number="0" size="23760">
         <constant name="accelEnrichmentMode">"MS Adder"</constant>
         <constant name="accelerometerCsPin">"NONE"</constant>
         <constant name="accelerometerCsPinMode">"default"</constant>
@@ -271,9 +271,9 @@
          1.0 1.0 1.0 1.0
          1.0 1.0 1.0 1.0
 </constant>
-        <constant digits="2" name="baroSensor_highValue" units="kpa">500.0</constant>
+        <constant digits="2" name="baroSensor_highValue" units="kPa">500.0</constant>
         <constant name="baroSensor_hwChannel">"Disabled"</constant>
-        <constant digits="2" name="baroSensor_lowValue" units="kpa">0.0</constant>
+        <constant digits="2" name="baroSensor_lowValue" units="kPa">0.0</constant>
         <constant name="baroSensor_type">"Custom"</constant>
         <constant digits="0" name="benchTestCount" units="">3.0</constant>
         <constant digits="1" name="benchTestOffTime" units="ms">500.0</constant>
@@ -401,7 +401,7 @@
         <constant name="boostControlPin">"NONE"</constant>
         <constant name="boostControlPinMode">"default"</constant>
         <constant digits="0" name="boostControlSafeDutyCycle" units="%">0.0</constant>
-        <constant digits="0" name="boostCutPressure" units="kPa (absolute)">300.0</constant>
+        <constant digits="0" name="boostCutPressure" units="kPa">300.0</constant>
         <constant digits="1" name="boostCutPressureHyst" units="kPa (absolute)">20.0</constant>
         <constant cols="1" digits="1" name="boostOpenLoopBlends1_blendBins" rows="8">
          0.0
@@ -561,7 +561,7 @@
         <constant name="brakePedalPin">"NONE"</constant>
         <constant name="brakePedalPinMode">"PULLUP"</constant>
         <constant digits="0" name="byFirmwareVersion" units="index">0.0</constant>
-        <constant digits="0" name="calibrationBirthday" units="">2.025081E7</constant>
+        <constant digits="0" name="calibrationBirthday" units="">2.0250815E7</constant>
         <constant digits="0" name="camDecoder2jzPosition" units="angle">95.0</constant>
         <constant digits="0" name="camDecoder2jzPrecision" units="">40.0</constant>
         <constant name="camInputs1">"NONE"</constant>
@@ -590,9 +590,13 @@
         <constant name="canVssNbcType">"BMW_e46"</constant>
         <constant digits="4" name="canVssScaling" units="ratio">1.0</constant>
         <constant name="canWbo1_aemId">"ID1 0x0000180"</constant>
+        <constant name="canWbo1_enableRemap">"false"</constant>
+        <constant name="canWbo1_reHwidx">"Idx 0"</constant>
         <constant name="canWbo1_reId">"ID1 0x190/191"</constant>
         <constant name="canWbo1_type">"RusEFI"</constant>
         <constant name="canWbo2_aemId">"ID2 0x0000181"</constant>
+        <constant name="canWbo2_enableRemap">"false"</constant>
+        <constant name="canWbo2_reHwidx">"Idx 0"</constant>
         <constant name="canWbo2_reId">"ID2 0x192/193"</constant>
         <constant name="canWbo2_type">"RusEFI"</constant>
         <constant name="canWriteEnabled">"true"</constant>
@@ -2748,8 +2752,8 @@
          0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 4.702E-35 100.0 0.0 0.0 0.0 5.6018799999999996E-37 0.0 0.0
          0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
          0.0 200.0 0.5 0.0 4.62428E-42 8.26521E-37 0.0 0.0 0.0 0.0 8.26521E-37 0.0 0.0 0.0 0.0 0.0
-         0.0 0.0 0.0 1.51625E-34 7.27251E-25 0.0 50.0 0.0 450.0 68947.6 0.0 0.0 0.0 0.0 2.06887E-33 1.85493E-38
-         8.407789999999999E-42 4.2039E-42 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 500.0 10000.0 0.0 0.0 0.0 0.0
+         0.0 0.0 0.0 0.0 1.8367099999999999E-37 5.51019E-37 9.18366E-37 0.0 50.0 0.0 450.0 68947.6 0.0 0.0 0.0 0.0
+         2.06887E-33 1.85493E-38 8.407789999999999E-42 4.2039E-42 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 500.0 10000.0 0.0 0.0
 </constant>
         <constant digits="0" name="ltft_timeConstant" units="sec">3000.0</constant>
         <constant digits="1" name="ltitClampMax" units="%">0.0</constant>
@@ -2948,9 +2952,9 @@ end</constant>
          5300.0
          7000.0
 </constant>
-        <constant digits="2" name="map_sensor_highValue" units="kpa">0.0</constant>
+        <constant digits="2" name="map_sensor_highValue" units="kPa">0.0</constant>
         <constant name="map_sensor_hwChannel">"Disabled"</constant>
-        <constant digits="2" name="map_sensor_lowValue" units="kpa">0.0</constant>
+        <constant digits="2" name="map_sensor_lowValue" units="kPa">0.0</constant>
         <constant name="map_sensor_type">"DENSO183"</constant>
         <constant digits="0" name="mapCamDetectionAnglePosition" units="Deg">0.0</constant>
         <constant digits="2" name="mapErrorDetectionTooHigh" units="kPa">250.0</constant>
@@ -5131,8 +5135,8 @@ end</constant>
 </constant>
         <constant name="yesUnderstandLocking">"no"</constant>
     </page>
-    <versionInfo firmwareInfo="20250805" nPages="1" signature="rusEFI main.2025.08.10.hellen-f4-community.1317029539" version="5.0"/>
-    <bibliography author="rusEFI 20250805" writeDate="date"/>
+    <versionInfo firmwareInfo="20250810" nPages="1" signature="rusEFI main.2025.08.15.hellen-f4-community.416161301" version="5.0"/>
+    <bibliography author="rusEFI 20250810" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
