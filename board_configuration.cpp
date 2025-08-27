@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "hellen_meta.h"
 #include "defaults.h"
+#include "firing_order.h"
+#include "engine_configuration.h"
+#include "sensors/thermistors.h"
 
 static void setInjectorPins() {
 	engineConfiguration->injectionPins[0] = Gpio::G7;
@@ -45,7 +48,9 @@ static void setupDefaultSensorInputs() {
 }
 
 void setBoardConfigOverrides() {
+	//setHellenMegaEnPin();
 	setHellenVbatt();
+	hellenMegaSdWithAccelerometer();
 	setHellenCan();
 	setDefaultHellenAtPullUps();
 }
@@ -55,6 +60,7 @@ void setBoardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
 	setupDefaultSensorInputs();
+	setHellenMMbaro();
 	
 	// Ford Taurus SHO specific configurations
 	engineConfiguration->displayLogicLevelsInEngineSniffer = true;
@@ -76,10 +82,10 @@ void setBoardDefaultConfiguration() {
 
 	// Additional Ford Taurus SHO specific configurations
 	setCrankOperationMode();
+
 	engineConfiguration->injectorCompensationMode = ICM_FixedRailPressure;
 	setCommonNTCSensor(&engineConfiguration->clt, HELLEN_DEFAULT_AT_PULLUP);
 	setCommonNTCSensor(&engineConfiguration->iat, HELLEN_DEFAULT_AT_PULLUP);
 	setTPS1Calibration(75, 900);
 	hellenWbo();
-	setHellenMMbaro();
 }
