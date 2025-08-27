@@ -68,8 +68,8 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->enableSoftwareKnock = true;
 	engineConfiguration->cylindersCount = 6;
 	engineConfiguration->firingOrder = FO_1_4_2_5_3_6;
-	engineConfiguration->ignitionMode = IM_ONE_COIL;
-	engineConfiguration->fuelAlgorithm = engine_load_mode_e_LM_REAL_MAF;
+	engineConfiguration->ignitionMode = ignition_mode_e::IM_ONE_COIL;
+	engineConfiguration->fuelAlgorithm = rusefi::generated::enums::engine_load_mode_e::LM_REAL_MAF;
 	//setAlgorithm(LM_SPEED_DENSITY);
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
@@ -82,7 +82,7 @@ void setBoardDefaultConfiguration() {
 
 	// Additional Ford Taurus SHO specific configurations
 	setCrankOperationMode();
-	engineConfiguration->injectorCompensationMode = ICM_FixedRailPressure;
+	engineConfiguration->injectorCompensationMode = injector_compensation_mode_e::ICM_FixedRailPressure;
 	setCommonNTCSensor(&engineConfiguration->clt, HELLEN_DEFAULT_AT_PULLUP);
 	setCommonNTCSensor(&engineConfiguration->iat, HELLEN_DEFAULT_AT_PULLUP);
 	setTPS1Calibration(75, 900);
