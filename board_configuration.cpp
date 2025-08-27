@@ -50,13 +50,16 @@ static void setupDefaultSensorInputs() {
 	//engineConfiguration->adcVcc = 3.3f;
 }
 
-void setBoardConfigOverrides() {
+void setup_custom_board_overrides() {
 	setHellenVbatt();
 	setHellenCan();
 	setDefaultHellenAtPullUps();
+	
+	// Set our custom board configuration function
+	custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 }
 
-void setBoardDefaultConfiguration() {
+static void customBoardDefaultConfiguration() {
 	// Set up injector and ignition pins for Ford Taurus SHO
 	setInjectorPins();
 	setIgnitionPins();
@@ -88,4 +91,5 @@ void setBoardDefaultConfiguration() {
 	setTPS1Calibration(75, 900);
 	hellenWbo();
 	setHellenMMbaro();
+	hellenMegaSdWithAccelerometer();
 }
