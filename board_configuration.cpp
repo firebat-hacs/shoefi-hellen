@@ -8,6 +8,9 @@
 // Include generated headers for engine configuration constants
 #include "generated/controllers/generated/rusefi_generated_shoefi.h"
 
+// Declare the external function pointer that rusefi uses
+extern void (*custom_board_DefaultConfiguration)();
+
 static void setInjectorPins() {
 	engineConfiguration->injectionPins[0] = Gpio::G7;
 	engineConfiguration->injectionPins[1] = Gpio::G8;
