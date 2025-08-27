@@ -8,9 +8,6 @@
 // Include generated headers for engine configuration constants
 #include "generated/controllers/generated/rusefi_generated_shoefi.h"
 
-// Declare the external function pointer that rusefi uses
-extern void (*custom_board_DefaultConfiguration)();
-
 static void setInjectorPins() {
 	engineConfiguration->injectionPins[0] = Gpio::G7;
 	engineConfiguration->injectionPins[1] = Gpio::G8;
@@ -94,5 +91,5 @@ void setup_custom_board_overrides() {
 	setDefaultHellenAtPullUps();
 	
 	// Set our custom board configuration function
-	custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
+	custom_board_DefaultConfiguration.emplace(customBoardDefaultConfiguration);
 }
