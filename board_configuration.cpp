@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "hellen_meta.h"
 #include "defaults.h"
-#include "firing_order.h"
-#include "engine_configuration.h"
-#include "sensors/thermistors.h"
 
 static void setInjectorPins() {
 	engineConfiguration->injectionPins[0] = Gpio::G7;
