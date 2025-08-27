@@ -1,6 +1,12 @@
 #include "pch.h"
 #include "hellen_meta.h"
 #include "defaults.h"
+#include "firing_order.h"
+#include "engine_configuration.h"
+#include "sensors/thermistors.h"
+
+// Include generated headers for engine configuration constants
+#include "generated/controllers/generated/rusefi_generated_shoefi.h"
 
 static void setInjectorPins() {
 	engineConfiguration->injectionPins[0] = Gpio::G7;
@@ -63,7 +69,7 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->cylindersCount = 6;
 	engineConfiguration->firingOrder = FO_1_4_2_5_3_6;
 	engineConfiguration->ignitionMode = IM_ONE_COIL;
-	engineConfiguration->fuelAlgorithm = LM_REAL_MAF;
+	engineConfiguration->fuelAlgorithm = engine_load_mode_e_LM_REAL_MAF;
 	//setAlgorithm(LM_SPEED_DENSITY);
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
