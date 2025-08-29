@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "hellen_meta.h"
 #include "defaults.h"
+#include "board_overrides.h"
 #include "firing_order.h"
 #include "engine_configuration.h"
 #include "sensors/thermistors.h"
@@ -91,5 +92,5 @@ void setup_custom_board_overrides() {
 	setDefaultHellenAtPullUps();
 	
 	// Set our custom board configuration function
-	custom_board_DefaultConfiguration.emplace(customBoardDefaultConfiguration);
+	custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 }
