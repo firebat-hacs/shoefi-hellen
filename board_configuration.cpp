@@ -73,8 +73,8 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->cylindersCount = 6;
 	engineConfiguration->firingOrder = FO_1_4_2_5_3_6;
 	engineConfiguration->ignitionMode = IM_ONE_COIL;
-	engineConfiguration->fuelAlgorithm = LM_REAL_MAF;
-	//setAlgorithm(LM_SPEED_DENSITY);
+	engineConfiguration->fuelAlgorithm = engine_load_mode_e::LM_REAL_MAF;
+	//setAlgorithm(LM_REAL_MAF);
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
 	engineConfiguration->mainRelayPin = Gpio::E10;
