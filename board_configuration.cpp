@@ -54,7 +54,8 @@ void setBoardConfigOverrides() {
 	setHellenMegaEnPin();
 	setHellenVbatt();
 	//hellenMegaSdWithAccelerometer();
-	setHellenSdCardSpi1();
+	setHellenSdCardSpi1Hardware();
+	// setAccelerometerSpi();  //maybe this will work?
   	setHellenCan();
 	setDefaultHellenAtPullUps();
 
