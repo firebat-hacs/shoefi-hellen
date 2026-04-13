@@ -50,22 +50,23 @@ static void setupDefaultSensorInputs() {
 		
 }
 
-void setBoardConfigOverrides() {
-	setHellenMegaEnPin();
-	setHellenVbatt();
-	//hellenMegaSdWithAccelerometer();
-	setHellenSdCardSpi1Hardware();
-	// setAccelerometerSpi();  //maybe this will work?
-  	setHellenCan();
-	setDefaultHellenAtPullUps();
-
-}
-
-void setBoardDefaultConfiguration() {
+void customBoardDefaultConfiguration() {
 	setInjectorPins();
 	setIgnitionPins();
 	setupDefaultSensorInputs();
 	setHellenMMbaro();
+	setCrankOperationMode();
+	setCommonNTCSensor(&engineConfiguration->clt, HELLEN_DEFAULT_AT_PULLUP);
+	setCommonNTCSensor(&engineConfiguration->iat, HELLEN_DEFAULT_AT_PULLUP);
+    setTPS1Calibration(75, 900);
+	hellenWbo();
+	setHellenMegaEnPin();
+	setHellenVbatt();
+	//hellenMegaSdWithAccelerometer();
+	setHellenSdCardSpi1Hardware();
+	//setAccelerometerSpi();  //maybe this will work?
+  	setHellenCan();
+	setDefaultHellenAtPullUps();
 
 	engineConfiguration->displayLogicLevelsInEngineSniffer = true;
 	engineConfiguration->globalTriggerAngleOffset = 9;
@@ -74,7 +75,6 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->firingOrder = FO_1_4_2_5_3_6;
 	engineConfiguration->ignitionMode = IM_ONE_COIL;
 	engineConfiguration->fuelAlgorithm = engine_load_mode_e::LM_REAL_MAF;
-	//setAlgorithm(LM_REAL_MAF);
 	engineConfiguration->canTxPin = Gpio::D1;
 	engineConfiguration->canRxPin = Gpio::D0;
 	engineConfiguration->mainRelayPin = Gpio::E10;
@@ -83,12 +83,9 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->idle.solenoidPin = Gpio::G3;
 	engineConfiguration->tachOutputPin = Gpio::F13;
 	engineConfiguration->enableVerboseCanTx = true;
-
-	setCrankOperationMode();
-	
 	engineConfiguration->injectorCompensationMode = ICM_FixedRailPressure;
-	setCommonNTCSensor(&engineConfiguration->clt, HELLEN_DEFAULT_AT_PULLUP);
-	setCommonNTCSensor(&engineConfiguration->iat, HELLEN_DEFAULT_AT_PULLUP);
-    	setTPS1Calibration(75, 900);
-	hellenWbo();
+}
+
+void setup_custom_board_overrides() {
+	custom_board_DefaultConfiguration = customBoardDefaultConfiguration;
 }
