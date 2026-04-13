@@ -60,7 +60,6 @@ void customBoardDefaultConfiguration() {
 	setCommonNTCSensor(&engineConfiguration->iat, HELLEN_DEFAULT_AT_PULLUP);
     setTPS1Calibration(75, 900);
 	hellenWbo();
-	setHellenMegaEnPin();
 	setHellenVbatt();
 	//hellenMegaSdWithAccelerometer();
 	setHellenSdCardSpi1Hardware();
